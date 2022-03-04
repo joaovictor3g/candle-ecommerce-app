@@ -1,5 +1,6 @@
 import { ProductProps } from "@/@types/product";
 import { SectionImage } from "@/components/Home";
+import { SectionAbout } from "@/components/Home/SectionAbout";
 import { SectionProducts } from "@/components/Home/SectionProducts";
 import { Box } from "@chakra-ui/react";
 import axios from "axios";
@@ -19,6 +20,7 @@ const Home: NextPage<HomeProps> = ({ products }) => {
       </Head>
       <SectionImage />
       <SectionProducts products={products} />
+      <SectionAbout />
     </Box>
   );
 };

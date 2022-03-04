@@ -1,12 +1,12 @@
 import {
   Box,
-  Button,
   Flex,
   Heading,
   Image,
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { GreenButton } from "@/components/layout";
 
 export function SectionImage() {
   return (
@@ -52,9 +52,7 @@ export function SectionImage() {
             your pleasure moments
           </Text>
         </VStack>
-        <Button type="button" bg="#56B280" color="#FFFFFF">
-          Discovery your collection
-        </Button>
+        <GreenButton text="Discovery your collection"/>
       </Flex>
     </Box>
   );
