@@ -11,7 +11,7 @@ export function Links() {
     <HStack spacing="15px">
       {links.map((link) => (
         <Link key={link.key} href={link.href}>
-          <a>{link.name}</a>
+          {link.name}
         </Link>
       ))}
     </HStack>
