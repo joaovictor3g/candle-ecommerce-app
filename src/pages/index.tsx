@@ -1,3 +1,4 @@
+import { SectionImage } from "@/components/Home";
 import { Header } from "@/components/layout";
 import { Box } from "@chakra-ui/react";
 import type { NextPage } from "next";
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <SectionImage />
     </Box>
   );
 };
