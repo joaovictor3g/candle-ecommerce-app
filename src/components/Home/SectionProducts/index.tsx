@@ -8,7 +8,7 @@ interface SectionProductsProps {
 
 export function SectionProducts({ products }: SectionProductsProps) {
   return (
-    <VStack align="center" mt="90px">
+    <VStack align="center" mt="90px" p="4">
       <Box display="flex" flexDir="column" alignItems="center">
         <Heading textAlign="center" fontFamily="Poppins" fontWeight="500">
           Products

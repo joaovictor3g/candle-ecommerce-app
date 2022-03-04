@@ -17,6 +17,7 @@ export function SectionImage() {
       alignItems="center"
       justifyContent="center"
       h="700px"
+      p="4"
     >
       <Image
         src="/bg-image.jpg"
