@@ -1,6 +1,7 @@
+import NextLink from "next/link";
 import { formatPrice } from "@/utils";
 import { ProductProps } from "@/@types/product";
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
 
 interface IProductProps {
   product: ProductProps;
@@ -19,9 +20,13 @@ export function Product({ product }: IProductProps) {
     >
       <Image src={product.img} alt={`candle ${product.name}`} />
       <Flex align="center" justify="space-between">
-        <Text as="h1" fontFamily="Poppins" fontWeight="500">
-          {product.name}
-        </Text>
+        <NextLink href={`/product/${product.key}`} passHref>
+          <Link>
+            <Text as="h1" fontFamily="Poppins" fontWeight="500">
+              {product.name}
+            </Text>
+          </Link>
+        </NextLink>
 
         <Text
           color="#56B280"
