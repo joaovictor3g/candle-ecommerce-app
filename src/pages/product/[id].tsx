@@ -23,12 +23,31 @@ export default function Product() {
   const id = query.id as string;
 
   const [product, setProduct] = useState<ProductProps | null>(null);
+  const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     api
       .get<ProductProps[]>(`/products?key=${id}`)
       .then((response) => setProduct(response.data[0]));
   }, [id]);
+
+  function handleAddToCart(product: ProductProps) {
+    const productsInStorage = JSON.parse(
+      localStorage.getItem("@candleapp:cart") || "[]"
+    );
+
+    const productsWithQuantity = {
+      ...product,
+      quantity,
+    };
+
+    const newProductsInStorage = [...productsInStorage, productsWithQuantity];
+
+    localStorage.setItem(
+      "@candleapp:cart",
+      JSON.stringify(newProductsInStorage)
+    );
+  }
 
   if (!product) return null;
 
@@ -67,7 +86,14 @@ export default function Product() {
           <Flex justify="space-between" w="100%" align="center">
             <FormControl w="100%">
               <FormLabel htmlFor="quantity">Quantity:</FormLabel>
-              <Input name="quantity" type="number" min="0" w="100px" />
+              <Input
+                name="quantity"
+                type="number"
+                min="0"
+                w="100px"
+                value={quantity}
+                onChange={(e) => setQuantity(Number(e.target.value))}
+              />
             </FormControl>
             <Text
               color="#56B280"
@@ -79,7 +105,11 @@ export default function Product() {
             </Text>
           </Flex>
           <Box w="100%">
-            <GreenButton text="+Add to cart" w="100%" />
+            <GreenButton
+              text="+Add to cart"
+              w="100%"
+              onClick={() => handleAddToCart(product)}
+            />
 
             <Box
               display="flex"
