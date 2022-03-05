@@ -12,7 +12,7 @@ Candleaf
 
 ## Project
 
-Appliction developed to learning effects. The UI in figma can be seen in [Figma](<https://www.figma.com/file/NDNtKPfCKX2pmfNYoqMsIb/E-Commerce-UI-KIT-(Community)?node-id=116%3A1557>).
+Appliction developed to learning effects. The UI layout can see [here](<https://www.figma.com/file/NDNtKPfCKX2pmfNYoqMsIb/E-Commerce-UI-KIT-(Community)?node-id=116%3A1557>). ;)
 It's not finalized yet.
 
 ## 🚀 Techs
