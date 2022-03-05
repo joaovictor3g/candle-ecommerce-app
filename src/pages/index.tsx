@@ -1,7 +1,10 @@
 import { ProductProps } from "@/@types/product";
-import { SectionImage } from "@/components/Home";
-import { SectionAbout } from "@/components/Home/SectionAbout";
-import { SectionProducts } from "@/components/Home/SectionProducts";
+import {
+  SectionImage,
+  SectionAbout,
+  SectionProducts,
+  SectionTestimonials,
+} from "@/components/Home";
 import { Box } from "@chakra-ui/react";
 import axios from "axios";
 import type { GetStaticProps, NextPage } from "next";
@@ -21,6 +24,7 @@ const Home: NextPage<HomeProps> = ({ products }) => {
       <SectionImage />
       <SectionProducts products={products} />
       <SectionAbout />
+      <SectionTestimonials />
     </Box>
   );
 };
