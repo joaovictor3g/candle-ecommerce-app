@@ -1,4 +1,5 @@
 import { ProductProps } from "@/@types/product";
+import { quantityState } from "@/stores/atoms";
 import { formatPrice } from "@/utils";
 import {
   Box,
@@ -15,11 +16,11 @@ import {
   Text,
   VStack,
   Image,
-  HStack,
   Button,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 
 interface ProductPropsWithQuantity extends ProductProps {
   quantity: number;
@@ -29,6 +30,8 @@ export default function Cart() {
   const [productsInStorage, setProductsInStorage] = useState<
     ProductPropsWithQuantity[]
   >([]);
+
+  const [quantity, setQuantity] = useRecoilState(quantityState);
 
   useEffect(() => {
     setProductsInStorage(
@@ -91,12 +94,13 @@ export default function Cart() {
                     <Input
                       type="number"
                       minW="150px"
-                      value={product.quantity}
+                      value={quantity}
+                      onChange={(e) => setQuantity(Number(e.target.value))}
                     />
                   </Td>
                   <Td>
                     <Text fontWeight="bold">
-                      {formatPrice(product.quantity * product.price)}
+                      {/* {formatPrice(product.quantity * product.price)} */}
                     </Text>
                   </Td>
                 </Tr>

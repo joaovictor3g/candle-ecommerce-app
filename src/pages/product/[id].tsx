@@ -1,6 +1,7 @@
 import { ProductProps } from "@/@types/product";
 import { GreenButton } from "@/components/layout";
 import { api } from "@/services";
+import { quantityState } from "@/stores/atoms";
 import { formatPrice } from "@/utils";
 import {
   Box,
@@ -17,13 +18,14 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 
 export default function Product() {
   const { query } = useRouter();
   const id = query.id as string;
 
   const [product, setProduct] = useState<ProductProps | null>(null);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useRecoilState(quantityState);
 
   useEffect(() => {
     api
