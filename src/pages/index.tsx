@@ -4,6 +4,7 @@ import {
   SectionAbout,
   SectionProducts,
   SectionTestimonials,
+  SectionMostSold,
 } from "@/components/Home";
 import { Box } from "@chakra-ui/react";
 import axios from "axios";
@@ -11,9 +12,10 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 interface HomeProps {
   products: ProductProps[];
+  mostSoldProducts: ProductProps[];
 }
 
-const Home: NextPage<HomeProps> = ({ products }) => {
+const Home: NextPage<HomeProps> = ({ products, mostSoldProducts }) => {
   return (
     <Box>
       <Head>
@@ -25,6 +27,7 @@ const Home: NextPage<HomeProps> = ({ products }) => {
       <SectionProducts products={products} />
       <SectionAbout />
       <SectionTestimonials />
+      <SectionMostSold products={mostSoldProducts} />
     </Box>
   );
 };
@@ -32,12 +35,16 @@ const Home: NextPage<HomeProps> = ({ products }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await axios.get("http://localhost:3333/products");
+  const response = await axios.get<ProductProps[]>(
+    "http://localhost:3333/products"
+  );
   const products = response.data;
+  const mostSoldProducts = products.slice(0, 4);
 
   return {
     props: {
       products: products,
+      mostSoldProducts,
     },
   };
 };

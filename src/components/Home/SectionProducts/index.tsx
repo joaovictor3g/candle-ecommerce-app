@@ -1,6 +1,8 @@
 import { ProductProps } from "@/@types/product";
-import { VStack, Box, Heading, Text, SimpleGrid } from "@chakra-ui/react";
-import { Product } from "./Product";
+import { SectionSubtitle } from "@/components/layout/SectionSubtitle";
+import { SectionTitle } from "@/components/layout/SectionTitle";
+import { VStack, Box, Text, SimpleGrid } from "@chakra-ui/react";
+import { Product } from "../Product";
 
 interface SectionProductsProps {
   products: ProductProps[];
@@ -10,12 +12,10 @@ export function SectionProducts({ products }: SectionProductsProps) {
   return (
     <VStack align="center" maxW="1120px" m="90px auto" p="4">
       <Box display="flex" flexDir="column" alignItems="center">
-        <Heading textAlign="center" fontFamily="Poppins" fontWeight="500">
-          Products
-        </Heading>
-        <Text as="span" textAlign="center">
+        <SectionTitle>Products</SectionTitle>
+        <SectionSubtitle>
           Order it for you or for your beloved ones
-        </Text>
+        </SectionSubtitle>
 
         <SimpleGrid mt="60px" columns={4} spacing="10">
           {products.map((product) => (

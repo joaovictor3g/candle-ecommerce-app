@@ -1,16 +1,7 @@
-import {
-  Avatar,
-  Box,
-  Flex,
-  Heading,
-  HStack,
-  Icon,
-  SimpleGrid,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { SectionSubtitle } from "@/components/layout/SectionSubtitle";
+import { SectionTitle } from "@/components/layout/SectionTitle";
+import { Box, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { Quote } from "./Quote";
-import { StarIcon } from "./StarIcon";
 
 export function SectionTestimonials() {
   return (
@@ -26,13 +17,11 @@ export function SectionTestimonials() {
         spacing="28px"
       >
         <Box textAlign="center">
-          <Heading fontFamily="Poppins" fontWeight="500">
-            Testimonials
-          </Heading>
+          <SectionTitle>Testimonials</SectionTitle>
 
-          <Text as="span" color="#5E6E89" fontFamily="Poppins" fontWeight="500">
+          <SectionSubtitle>
             Some quotes from our happy customers
-          </Text>
+          </SectionSubtitle>
         </Box>
 
         <SimpleGrid columns={3} spacing={10}>
