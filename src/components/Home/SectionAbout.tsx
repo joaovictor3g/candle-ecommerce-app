@@ -8,13 +8,27 @@ import {
   List,
   ListItem,
   Icon,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { GreenButton } from "@/components/layout";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 
 export function SectionAbout() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    md: true,
+  });
+
   return (
-    <Flex maxW="1120px" m="0 auto" p="4" align="center" justify="space-between">
+    <Flex
+      maxW="1120px"
+      m="0 auto"
+      p="4"
+      align="center"
+      justify="space-between"
+      flexWrap="wrap"
+      justifyContent="center"
+    >
       <VStack align="flex-start" spacing="28px">
         <Box>
           <Heading
@@ -65,9 +79,11 @@ export function SectionAbout() {
         <GreenButton text="Learn more" />
       </VStack>
 
-      <Box>
-        <Image src="/section-about.png" alt="About the candles" />
-      </Box>
+      {isWideVersion && (
+        <Box>
+          <Image src="/section-about.png" alt="About the candles" />
+        </Box>
+      )}
     </Flex>
   );
 }

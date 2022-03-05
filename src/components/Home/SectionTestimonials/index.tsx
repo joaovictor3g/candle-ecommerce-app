@@ -24,7 +24,7 @@ export function SectionTestimonials() {
           </SectionSubtitle>
         </Box>
 
-        <SimpleGrid columns={3} spacing={10}>
+        <SimpleGrid minChildWidth="200px" spacing={10} w="100%">
           <Quote />
           <Quote />
           <Quote />

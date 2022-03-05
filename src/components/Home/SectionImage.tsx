@@ -1,11 +1,4 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, VStack } from "@chakra-ui/react";
 import { GreenButton } from "@/components/layout";
 
 export function SectionImage() {
@@ -17,7 +10,7 @@ export function SectionImage() {
       alignItems="center"
       justifyContent="center"
       h="700px"
-      p="4"
+      p={[2, 4]}
     >
       <Image
         src="/bg-image.jpg"
@@ -42,7 +35,7 @@ export function SectionImage() {
         borderRadius="2px"
       >
         <VStack spacing="10px">
-          <Text fontSize="40px">🥬</Text>
+          <Text fontSize="40px">🌱</Text>
           <Heading color="#000" fontFamily="Poppins" fontWeight="medium">
             The nature candle
           </Heading>
@@ -52,7 +45,7 @@ export function SectionImage() {
             your pleasure moments
           </Text>
         </VStack>
-        <GreenButton text="Discovery your collection"/>
+        <GreenButton text="Discovery your collection" />
       </Flex>
     </Box>
   );

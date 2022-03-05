@@ -11,8 +11,11 @@ export function Product({ product }: IProductProps) {
     <Box
       boxShadow="0 1px 1px rgba(0,0,0,0.03), 0 2px 2px rgba(0,0,0,0.03), 0 4px 4px rgba(0,0,0,0.03), 0 8px 8px rgba(0,0,0,0.03), 0 2px 2px rgba(0,0,0,0.03)"
       borderRadius="2px"
-      key={product.key}
       p={4}
+      maxW="220px"
+      minW="200px"
+      w="100%"
+      h="200px"
     >
       <Image src={product.img} alt={`candle ${product.name}`} />
       <Flex align="center" justify="space-between">

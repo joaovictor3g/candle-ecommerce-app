@@ -3,7 +3,14 @@ import { StarIcon } from "./StarIcon";
 
 export function Quote() {
   return (
-    <VStack bg="#FFFFFF" p="6" align="center" spacing={6}>
+    <VStack
+      bg="#FFFFFF"
+      p="6"
+      align="center"
+      spacing={6}
+      borderRadius="6px"
+      boxShadow="0px 4px 24px rgba(139, 167, 178, 0.16)"
+    >
       <Avatar name="João Victor" size="lg" />
       <HStack>
         {Array(5)
