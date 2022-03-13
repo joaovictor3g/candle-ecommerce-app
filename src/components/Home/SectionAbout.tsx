@@ -10,7 +10,7 @@ import {
   Icon,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { GreenButton } from "@/components/layout";
+import { GreenButton, Wrapper } from "@/components/layout";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 
 export function SectionAbout() {
@@ -20,10 +20,8 @@ export function SectionAbout() {
   });
 
   return (
-    <Flex
-      maxW="1120px"
-      m="0 auto"
-      p="4"
+    <Wrapper
+      direction="row"
       align="center"
       justify="space-between"
       flexWrap="wrap"
@@ -84,6 +82,6 @@ export function SectionAbout() {
           <Image src="/section-about.png" alt="About the candles" />
         </Box>
       )}
-    </Flex>
+    </Wrapper>
   );
 }

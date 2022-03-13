@@ -13,6 +13,7 @@ import { Cart } from "./Cart";
 import { DrawerMenu } from "./DrawerMenu";
 import { Links } from "./Links";
 import { Profile } from "./Profile";
+import { Wrapper } from "..";
 
 export function Header() {
   const isWideVersion = useBreakpointValue({ base: false, md: true });
@@ -22,11 +23,11 @@ export function Header() {
   }
 
   return (
-    <Flex
+    <Wrapper
       as="header"
-      maxW="1120px"
       m="0 auto"
       p={[2, 4]}
+      direction="row"
       align="center"
       justify="space-between"
     >
@@ -60,6 +61,6 @@ export function Header() {
         <Profile />
         <Cart />
       </HStack>
-    </Flex>
+    </Wrapper>
   );
 }

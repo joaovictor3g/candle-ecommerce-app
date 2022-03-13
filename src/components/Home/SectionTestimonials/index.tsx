@@ -1,13 +1,13 @@
+import { Section, Wrapper } from "@/components/layout";
 import { SectionSubtitle } from "@/components/layout/SectionSubtitle";
 import { SectionTitle } from "@/components/layout/SectionTitle";
-import { Box, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, SimpleGrid, VStack } from "@chakra-ui/react";
 import { Quote } from "./Quote";
 
 export function SectionTestimonials() {
   return (
-    <Box bg="rgba(86, 178, 128, 0.1)">
-      <VStack
-        maxW="1120px"
+    <Section bg="rgba(86, 178, 128, 0.1)">
+      <Wrapper
         px="4"
         py="24"
         m="0 auto"
@@ -29,7 +29,7 @@ export function SectionTestimonials() {
           <Quote />
           <Quote />
         </SimpleGrid>
-      </VStack>
-    </Box>
+      </Wrapper>
+    </Section>
   );
 }

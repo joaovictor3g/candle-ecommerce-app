@@ -1,7 +1,8 @@
 import { ProductProps } from "@/@types/product";
+import { Wrapper } from "@/components/layout";
 import { SectionSubtitle } from "@/components/layout/SectionSubtitle";
 import { SectionTitle } from "@/components/layout/SectionTitle";
-import { VStack, Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import { Product } from "../Product";
 
 interface SectionProductsProps {
@@ -10,7 +11,7 @@ interface SectionProductsProps {
 
 export function SectionProducts({ products }: SectionProductsProps) {
   return (
-    <VStack align="center" maxW="1120px" m="90px auto" p="4">
+    <Wrapper align="center">
       <Box display="flex" flexDir="column" alignItems="center" w="100%">
         <SectionTitle>Products</SectionTitle>
         <SectionSubtitle>
@@ -29,6 +30,6 @@ export function SectionProducts({ products }: SectionProductsProps) {
           ))}
         </SimpleGrid>
       </Box>
-    </VStack>
+    </Wrapper>
   );
 }

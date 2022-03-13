@@ -1,5 +1,6 @@
 import { ProductProps } from "@/@types/product";
-import { GreenButton } from "@/components/layout";
+import { GreenButton, Section } from "@/components/layout";
+import { TextBox } from "@/components/Product";
 import { api } from "@/services";
 import { quantityState } from "@/stores/atoms";
 import { formatPrice } from "@/utils";
@@ -54,14 +55,8 @@ export default function Product() {
   if (!product) return null;
 
   return (
-    <Box maxW="1120px" p="4" m="50px auto">
-      <Stack
-        direction="row"
-        w="100%"
-        spacing="6"
-        // flexWrap="wrap"
-        justify="center"
-      >
+    <Section>
+      <Stack direction="row" w="100%" spacing="6" justify="center">
         <VStack w="50%" align="center" minW="300px">
           <Image
             src={product.img}
@@ -113,44 +108,10 @@ export default function Product() {
               onClick={() => handleAddToCart(product)}
             />
 
-            <Box
-              display="flex"
-              flexDir="column"
-              borderRadius="7px"
-              border="1px solid #E6E6E6"
-              mt="50px"
-              p="4"
-              fontFamily={"Poppins"}
-              fontSize="sm"
-              color="#1D252C"
-              lineHeight="30px"
-            >
-              <Text>
-                <Text as="strong">Wax: </Text>
-                Top grade Soy wax that delivers a smoke less, consistent burn
-              </Text>
-              <Text>
-                <Text as="strong">Fragrance: </Text>
-                Premium quality ingredients with natural essential oils
-              </Text>
-              <HStack>
-                <Text>
-                  <Text as="strong">Burning Time: </Text>
-                  70-75 hours
-                </Text>
-                <Text>
-                  <Text as="strong">Dimension: </Text>
-                  10cm x 5cm
-                </Text>
-                <Text>
-                  <Text as="strong">Weight: </Text>
-                  400g
-                </Text>
-              </HStack>
-            </Box>
+            <TextBox />
           </Box>
         </VStack>
       </Stack>
-    </Box>
+    </Section>
   );
 }

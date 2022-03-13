@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Image, Text, VStack } from "@chakra-ui/react";
-import { GreenButton } from "@/components/layout";
+import { GreenButton, Page } from "@/components/layout";
 
 export function SectionImage() {
   return (

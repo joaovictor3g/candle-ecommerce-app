@@ -1,4 +1,5 @@
 import { ProductProps } from "@/@types/product";
+import { Section } from "@/components/layout";
 import { quantityState } from "@/stores/atoms";
 import { formatPrice } from "@/utils";
 import {
@@ -40,7 +41,7 @@ export default function Cart() {
   }, []);
 
   return (
-    <Box maxW="1120px" p="4" m="90px auto">
+    <Section>
       <Box>
         <VStack>
           <Heading fontFamily="Poppins" fontWeight="500">
@@ -113,6 +114,6 @@ export default function Cart() {
           </Flex>
         )}
       </Box>
-    </Box>
+    </Section>
   );
 }
