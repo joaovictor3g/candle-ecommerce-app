@@ -1,5 +1,5 @@
 import { ProductProps } from "@/@types/product";
-import { Section } from "@/components/layout";
+import { Section } from "@/layout";
 import { quantityState } from "@/stores/atoms";
 import { formatPrice } from "@/utils";
 import {

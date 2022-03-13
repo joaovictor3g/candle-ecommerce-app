@@ -1,4 +1,5 @@
 import { Box, Divider, Image, Text } from "@chakra-ui/react";
+import { Wrapper } from "..";
 
 export function Footer() {
   return (
@@ -10,8 +11,9 @@ export function Footer() {
       fontWeight="semibold"
       textAlign="center"
       py="24"
+      flexGrow="2"
     >
-      <Box maxW="1120px" p="4" m="0 auto">
+      <Wrapper>
         <Divider orientation="horizontal" />
 
         <Box textAlign="left">
@@ -21,7 +23,7 @@ export function Footer() {
             Your natural candle made for <br /> your home and for your wellness.
           </Text>
         </Box>
-      </Box>
+      </Wrapper>
     </Box>
   );
 }

@@ -1,7 +1,5 @@
 import { ProductProps } from "@/@types/product";
-import { Wrapper } from "@/components/layout";
-import { SectionSubtitle } from "@/components/layout/SectionSubtitle";
-import { SectionTitle } from "@/components/layout/SectionTitle";
+import { Wrapper, SectionTitle, SectionSubtitle } from "@/layout";
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import { Product } from "../Product";
 

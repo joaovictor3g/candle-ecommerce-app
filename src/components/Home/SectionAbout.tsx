@@ -10,7 +10,7 @@ import {
   Icon,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { GreenButton, Wrapper } from "@/components/layout";
+import { GreenButton, Wrapper } from "@/layout";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 
 export function SectionAbout() {

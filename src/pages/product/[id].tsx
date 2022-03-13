@@ -1,5 +1,5 @@
 import { ProductProps } from "@/@types/product";
-import { GreenButton, Section } from "@/components/layout";
+import { GreenButton, Wrapper } from "@/layout";
 import { TextBox } from "@/components/Product";
 import { api } from "@/services";
 import { quantityState } from "@/stores/atoms";
@@ -10,7 +10,6 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  HStack,
   Image,
   Input,
   Stack,
@@ -55,7 +54,7 @@ export default function Product() {
   if (!product) return null;
 
   return (
-    <Section>
+    <Wrapper>
       <Stack direction="row" w="100%" spacing="6" justify="center">
         <VStack w="50%" align="center" minW="300px">
           <Image
@@ -112,6 +111,6 @@ export default function Product() {
           </Box>
         </VStack>
       </Stack>
-    </Section>
+    </Wrapper>
   );
 }

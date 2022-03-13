@@ -1,8 +1,6 @@
 import { ProductProps } from "@/@types/product";
-import { Box, SimpleGrid, VStack } from "@chakra-ui/react";
-import { Wrapper } from "../layout";
-import { SectionSubtitle } from "../layout/SectionSubtitle";
-import { SectionTitle } from "../layout/SectionTitle";
+import { SimpleGrid, VStack } from "@chakra-ui/react";
+import { Wrapper, SectionTitle, SectionSubtitle } from "@/layout";
 import { Product } from "./Product";
 
 interface SectionMostSoldProps {
@@ -11,7 +9,7 @@ interface SectionMostSoldProps {
 
 export function SectionMostSold({ products }: SectionMostSoldProps) {
   return (
-    <Wrapper px="4" py="24" >
+    <Wrapper px="4" py="24">
       <VStack fontFamily="Poppins" w="100%">
         <SectionTitle>Popular</SectionTitle>
         <SectionSubtitle>Some quotes from our happy customers</SectionSubtitle>

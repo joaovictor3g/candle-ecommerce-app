@@ -1,7 +1,5 @@
-import { Section, Wrapper } from "@/components/layout";
-import { SectionSubtitle } from "@/components/layout/SectionSubtitle";
-import { SectionTitle } from "@/components/layout/SectionTitle";
-import { Box, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Section, Wrapper, SectionSubtitle, SectionTitle } from "@/layout";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import { Quote } from "./Quote";
 
 export function SectionTestimonials() {

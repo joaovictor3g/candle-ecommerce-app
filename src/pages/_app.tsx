@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import { RecoilRoot } from "recoil";
 import { theme } from "@/styles";
-import { Footer, Header } from "@/components/layout";
+import { Footer, Header } from "@/layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
