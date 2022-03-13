@@ -1,10 +1,10 @@
-import { Section, Wrapper, SectionSubtitle, SectionTitle } from "@/layout";
+import { Wrapper, SectionSubtitle, SectionTitle } from "@/layout";
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import { Quote } from "./Quote";
 
 export function SectionTestimonials() {
   return (
-    <Section bg="rgba(86, 178, 128, 0.1)">
+    <Box bg="rgba(86, 178, 128, 0.1)">
       <Wrapper
         px="4"
         py="24"
@@ -28,6 +28,6 @@ export function SectionTestimonials() {
           <Quote />
         </SimpleGrid>
       </Wrapper>
-    </Section>
+    </Box>
   );
 }

@@ -9,7 +9,7 @@ interface SectionProductsProps {
 
 export function SectionProducts({ products }: SectionProductsProps) {
   return (
-    <Wrapper align="center">
+    <Wrapper>
       <Box display="flex" flexDir="column" alignItems="center" w="100%">
         <SectionTitle>Products</SectionTitle>
         <SectionSubtitle>

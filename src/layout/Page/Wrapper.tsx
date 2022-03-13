@@ -7,7 +7,7 @@ interface WrapperProps extends StackProps {
 
 export function Wrapper({ children, ...rest }: WrapperProps) {
   return (
-    <Stack maxW="1120px" p="4" margin="0 auto" {...rest}>
+    <Stack w="100%" maxW="1120px" p="4" margin="0 auto" {...rest}>
       {children}
     </Stack>
   );

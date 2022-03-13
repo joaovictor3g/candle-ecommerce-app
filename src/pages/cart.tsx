@@ -1,9 +1,8 @@
 import { ProductProps } from "@/@types/product";
-import { Section } from "@/layout";
+import { Section, Wrapper } from "@/layout";
 import { quantityState } from "@/stores/atoms";
 import { formatPrice } from "@/utils";
 import {
-  Box,
   Flex,
   Heading,
   Input,
@@ -42,7 +41,7 @@ export default function Cart() {
 
   return (
     <Section>
-      <Box>
+      <Wrapper mt="90px">
         <VStack>
           <Heading fontFamily="Poppins" fontWeight="500">
             Your cart items
@@ -113,7 +112,7 @@ export default function Cart() {
             <Text>Não há produtos no carrinho</Text>
           </Flex>
         )}
-      </Box>
+      </Wrapper>
     </Section>
   );
 }
