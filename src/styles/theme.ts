@@ -11,5 +11,12 @@ export const theme = extendTheme({
         fontWeight: "500",
       },
     },
+
+    Button: {
+      transtion: "background-color 0.2s ease-in-out",
+      hover: {
+        backgroundColor: "green.500",
+      },
+    },
   },
 });

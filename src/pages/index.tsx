@@ -20,10 +20,30 @@ import { BsFacebook, BsGithub, BsGoogle, BsTwitter } from "react-icons/bs";
 const PROVIDER_ICON_SIZE = 24;
 
 const providers = [
-  { id: 1, name: "github", icon: <BsGithub size={PROVIDER_ICON_SIZE} /> },
-  // { id: 2, name: "google", icon: <BsGoogle size={PROVIDER_ICON_SIZE} /> },
-  // { id: 3, name: "facebook", icon: <BsFacebook size={PROVIDER_ICON_SIZE} /> },
-  { id: 4, name: "twitter", icon: <BsTwitter size={PROVIDER_ICON_SIZE} /> },
+  {
+    id: 1,
+    name: "github",
+    icon: <BsGithub size={PROVIDER_ICON_SIZE} />,
+    bgColor: "#000000",
+  },
+  // {
+  //   id: 2,
+  //   name: "google",
+  //   icon: <BsGoogle size={PROVIDER_ICON_SIZE} />,
+  //   bgColor: "#EA4335",
+  // },
+  {
+    id: 3,
+    name: "facebook",
+    icon: <BsFacebook size={PROVIDER_ICON_SIZE} />,
+    bgColor: "#0E90F1",
+  },
+  // {
+  //   id: 4,
+  //   name: "twitter",
+  //   icon: <BsTwitter size={PROVIDER_ICON_SIZE} />,
+  //   bgColor: "rgb(29, 155, 240)",
+  // },
 ];
 
 export default function Home() {
@@ -42,7 +62,7 @@ export default function Home() {
         <title>Candle App | Login</title>
       </Head>
       <Section>
-        <Wrapper align={"center"} spacing="90px">
+        <Wrapper align="center" spacing="90px">
           <Heading>Login</Heading>
 
           <VStack maxW="400px" w="100% " spacing="40px">
@@ -73,6 +93,8 @@ export default function Home() {
                     onClick={() => handleSignIn(provider.name)}
                     w={`${100 / providers.length - 1}%`}
                     title={`login with ${provider.name}`}
+                    bg={provider.bgColor}
+                    color="#FFFFFF"
                   />
                 ))}
               </HStack>

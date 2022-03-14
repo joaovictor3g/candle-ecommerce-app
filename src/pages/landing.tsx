@@ -8,7 +8,7 @@ import {
 } from "@/components/Landing";
 import { Section } from "@/layout";
 import axios from "axios";
-import type { GetStaticProps, NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 
 interface LandingProps {
@@ -36,7 +36,7 @@ const Landing: NextPage<LandingProps> = ({ products, mostSoldProducts }) => {
 
 export default Landing;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const response = await axios.get<ProductProps[]>(
     "http://localhost:3333/products"
   );
