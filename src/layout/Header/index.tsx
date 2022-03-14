@@ -14,8 +14,10 @@ import { DrawerMenu } from "./DrawerMenu";
 import { Links } from "./Links";
 import { Profile } from "./Profile";
 import { Wrapper } from "..";
+import { useSession } from "next-auth/react";
 
 export function Header() {
+  const { data: session } = useSession();
   const isWideVersion = useBreakpointValue({ base: false, md: true });
 
   function handleGoToHome() {
@@ -31,7 +33,7 @@ export function Header() {
       align="center"
       justify="space-between"
     >
-      {!isWideVersion && (
+      {!isWideVersion && session && (
         <DrawerMenu>
           <Icon as={RiMenu2Line} w={6} h={6} />
         </DrawerMenu>
@@ -55,12 +57,15 @@ export function Header() {
         </Text>
       </Button>
 
-      {isWideVersion && <Links />}
-
-      <HStack align="center" spacing="10px">
-        <Profile />
-        <Cart />
-      </HStack>
+      {session && isWideVersion && (
+        <>
+          <Links />
+          <HStack align="center" spacing="10px">
+            <Profile />
+            <Cart />
+          </HStack>
+        </>
+      )}
     </Wrapper>
   );
 }

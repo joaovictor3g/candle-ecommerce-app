@@ -10,7 +10,7 @@ export function Footer() {
       fontSize="sm"
       fontWeight="semibold"
       textAlign="center"
-      py="24"
+      py="4"
       flexGrow="2"
     >
       <Wrapper>
