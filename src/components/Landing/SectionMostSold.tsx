@@ -21,7 +21,7 @@ export function SectionMostSold({ products }: SectionMostSoldProps) {
         placeItems="center"
       >
         {products.map((product) => (
-          <Product key={product.key} product={product} />
+          <Product key={product.id} product={product} />
         ))}
       </SimpleGrid>
     </Wrapper>

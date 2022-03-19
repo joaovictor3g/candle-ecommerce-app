@@ -1,6 +1,6 @@
 export type ProductProps = {
   name: string;
   price: number;
-  key: number;
+  id: number;
   img: string;
 };

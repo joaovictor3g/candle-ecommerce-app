@@ -13,9 +13,11 @@ export const theme = extendTheme({
     },
 
     Button: {
-      transtion: "background-color 0.2s ease-in-out",
-      hover: {
-        backgroundColor: "green.500",
+      baseStyle: {
+        transtion: "background-color 0.2s ease-in-out",
+        __hover: {
+          backgroundColor: "green.500",
+        },
       },
     },
   },

@@ -19,19 +19,20 @@ import {
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import { GetServerSideProps } from "next";
 
-export default function Product() {
-  const { query } = useRouter();
-  const id = query.id as string;
+interface SectionProductProps {
+  product: ProductProps;
+}
 
-  const [product, setProduct] = useState<ProductProps | null>(null);
+export default function Product({ product }: SectionProductProps) {
   const [quantity, setQuantity] = useRecoilState(quantityState);
 
-  useEffect(() => {
-    api
-      .get<ProductProps[]>(`/products?key=${id}`)
-      .then((response) => setProduct(response.data[0]));
-  }, [id]);
+  // useEffect(() => {
+  //   api
+  //     .get<ProductProps[]>(`/products?key=${id}`)
+  //     .then((response) => setProduct(response.data[0]));
+  // }, [id]);
 
   function handleAddToCart(product: ProductProps) {
     const productsInStorage = JSON.parse(
@@ -114,3 +115,16 @@ export default function Product() {
     </Wrapper>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { query } = ctx;
+  const id = query.id as string;
+
+  const response = await api.get<ProductProps[]>(`/products?key=${id}`);
+
+  return {
+    props: {
+      product: response.data,
+    },
+  };
+};

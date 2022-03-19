@@ -7,7 +7,7 @@ import {
   SectionMostSold,
 } from "@/components/Landing";
 import { Section } from "@/layout";
-import axios from "axios";
+import { api } from "@/services";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 
@@ -37,9 +37,7 @@ const Landing: NextPage<LandingProps> = ({ products, mostSoldProducts }) => {
 export default Landing;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await axios.get<ProductProps[]>(
-    "http://localhost:3333/products"
-  );
+  const response = await api.get<ProductProps[]>("/products");
   const products = response.data;
   const mostSoldProducts = products.slice(0, 4);
 
