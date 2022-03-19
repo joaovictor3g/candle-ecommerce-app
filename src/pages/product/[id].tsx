@@ -16,8 +16,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { GetServerSideProps } from "next";
 
@@ -87,6 +85,7 @@ export default function Product({ product }: SectionProductProps) {
                 name="quantity"
                 type="number"
                 min="0"
+                max={product.stock?.amount}
                 w="100px"
                 value={quantity}
                 onChange={(e) => setQuantity(Number(e.target.value))}
@@ -120,7 +119,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { query } = ctx;
   const id = query.id as string;
 
-  const response = await api.get<ProductProps[]>(`/products?key=${id}`);
+  const response = await api.get<ProductProps[]>(`/products/${id}`);
 
   return {
     props: {

@@ -20,7 +20,7 @@ export function Product({ product }: IProductProps) {
     >
       <Image src={product.img} alt={`candle ${product.name}`} />
       <Flex align="center" justify="space-between">
-        <NextLink href={`/product/${product.key}`} passHref>
+        <NextLink href={`/product/${product.id}`} passHref>
           <Link>
             <Text as="h1" fontFamily="Poppins" fontWeight="500">
               {product.name}
