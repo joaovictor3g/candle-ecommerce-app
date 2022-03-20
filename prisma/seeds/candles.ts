@@ -1,4 +1,8 @@
-export const products = [
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+const products = [
   {
     name: "Spiced Mint",
     price: 9.99,
@@ -40,3 +44,21 @@ export const products = [
     img: "https://i.ibb.co/sPsCdQ7/fresh-orange.png",
   },
 ];
+
+async function main() {
+  console.log("Start seeding...");
+  await prisma.product.createMany({
+    data: products,
+    skipDuplicates: true,
+  });
+  console.log("Seeding complete!");
+}
+
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
