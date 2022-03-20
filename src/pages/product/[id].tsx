@@ -26,12 +26,6 @@ interface SectionProductProps {
 export default function Product({ product }: SectionProductProps) {
   const [quantity, setQuantity] = useRecoilState(quantityState);
 
-  // useEffect(() => {
-  //   api
-  //     .get<ProductProps[]>(`/products?key=${id}`)
-  //     .then((response) => setProduct(response.data[0]));
-  // }, [id]);
-
   function handleAddToCart(product: ProductProps) {
     const productsInStorage = JSON.parse(
       localStorage.getItem("@candleapp:cart") || "[]"

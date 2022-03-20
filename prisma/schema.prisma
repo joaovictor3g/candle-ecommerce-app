@@ -16,6 +16,7 @@ model Product {
   price   Float
   img     String
   stock   Stock?
+  cart    Cart?
 }
 
 model Stock {
@@ -23,4 +24,11 @@ model Stock {
   product    Product? @relation(fields: [productId], references: [id])  
   productId  String
   amount     Int   @default(0)
+}
+
+model Cart {
+  id        String @id @default(uuid())
+  productId String
+  product   Product? @relation(fields: [productId], references: [id])
+  quantity  Int    @default(0)
 }

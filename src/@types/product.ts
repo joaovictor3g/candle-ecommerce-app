@@ -1,3 +1,4 @@
+import { CartProps } from "./cart";
 import { StockProps } from "./stock";
 
 export type ProductProps = {
@@ -6,4 +7,5 @@ export type ProductProps = {
   id: number;
   img: string;
   stock?: StockProps;
+  cart?: CartProps;
 };
